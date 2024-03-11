@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gimnasio Atomico</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<!--Parte del header-->
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('inicio') }}">Inicio</a>
+            <a href="#Registrarse">Registro</a>
+            <a href="#Login">Inicio de Sesión</a>
+            <a href="#Logout">Cerrar Sesión</a>
+        </nav>
+    </header>
+<!--Final del header-->
+
+<!--Parte de arriba-->
+    <section class="Home" id="Inicio">
+        <div class="Inicio">
+            <h3>Atomic Gym</h3>
+            <span>El Gimnasio más atómico</span>
+            <p></p>
+        </div>
+    </section>
+<!--Final de la parte de arriba-->
+<!--Footer de la pagina (parte baja)-->
+<section class="footer">
+
+    <div class="Contenedor A">
+
+        <div class="caja 1">
+            <h3>Referencia:</h3>
+            <a href="#">Inicio</a>
+            <a href="#">Registro</a>
+            <a href="#">Inicio De Sesion</a>
+            <a href="#">Cerrar Sesion</a>
+        </div>
+             
+        <div class="caja 2">
+            <h3>Informacion de contacto:</h3>
+            <a href="#">Numero: +34 123 55 66 77</a>
+            <a href="#">Correo: AtomicGym@gmail.com</a>
+        </div>
+    </div>
+
+    <div class="creditos">Creado por <span>Gym Atomic</span> / todos los derechos reservados</div>
+
+</section>
+<!--Final-->
+
+</body>
+</html>
