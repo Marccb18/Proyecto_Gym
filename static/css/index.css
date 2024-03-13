@@ -1,3 +1,10 @@
+body{
+    background-image: url('https://i.pinimg.com/736x/1b/d8/c2/1bd8c289f4b0fa3ed411c31c64769225.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Adjust the image size to cover the whole background */
+    background-position: center center; /* Center the image */
+
+}
 /* Estilos para el navbar */
 header {
     background-color: black;
