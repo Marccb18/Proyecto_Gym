@@ -7,15 +7,23 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-
+<!---Inicio del header,que contiene el menu de navegacion--->
 <header>
     <nav class="navbar">
-        <a href="#">Inicio</a>
-        <a href="#">Registro</a>
-        <a href="#">Inicio de Sesión</a>
-        <a href="#">Cerrar Sesión</a>
+        <div class="Nav_derecha">
+            <div class="imagen">
+                <img src="{{ url_for('static', filename='imagenes/Captura.PNG') }}"alt="Logo">
+            </div>
+            <a href="#">Inicio</a>
+        </div>
+        <div class="Nav_izquierda">
+            <a href="#">Registro</a>
+            <a href="#">Inicio de Sesión</a>
+            <a href="#">Cerrar Sesión</a>
+        </div>
     </nav>
 </header>
+<!--Final del header-->
 
 <section class="welcome">
     <div class="container">
@@ -38,7 +46,7 @@
 
 
 <footer>
-    <div class="container">
+    <div class="contenedor">
         <p>Gimnasio Atomico - Todos los derechos reservados</p>
     </div>
 </footer>
