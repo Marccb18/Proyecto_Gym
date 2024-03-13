@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header .navbar {
+    display: flex;
+    justify-content: center;
+}
+
+header .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+section.welcome {
+    padding: 50px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}  
