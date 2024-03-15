@@ -21,7 +21,6 @@ header .navbar a:hover {
 }
 
 
-
 .formulario{
     position: absolute;
     top: 30rem;
@@ -128,6 +127,7 @@ form .password{
 input[type="submit"]{
     position: relative;
     left: 35%;
+    margin-top: 2.5rem;
     width: 30%;
     height: 50px;
     border: 1px solid;
