@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gimnasio Atomico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<!---Inicio del header,que contiene el menu de navegacion-->
+<header>
+    <nav class="navbar">
+        <div class="Nav_derecha">
+            <div class="imagen">
+                <img src="{{ url_for('static', filename='imagenes/Captura.PNG') }}"alt="Logo">
+            </div>
+            <a href="#">Inicio</a>
+        </div>
+        <div class="Nav_izquierda">
+            <a href="#">Registro</a>
+            <a href="#">Inicio de Sesión</a>
+            <a href="#">Cerrar Sesión</a>
+        </div>
+    </nav>
+</header>
+<!--Final del header-->
+
+<section class="welcome">
+    <div class="container">
+        <h1>Bienvenido al Gimnasio Atomico</h1>
+        
+            <img src="{{ url_for('static', filename='imagenes/atomic.PNG') }}" alt="Gimnasio Atomico">
+
+        <p>
+            ¡Bienvenido a Gimnasio Atómico, tu destino número uno para ponerte en forma
+            y alcanzar tus objetivos de fitness! En nuestro gimnasio, te ofrecemos instalaciones de primera clase, 
+            entrenadores expertos y una variedad de clases emocionantes para satisfacer todas tus necesidades de entrenamiento.
+            Ya sea que estés buscando perder peso, tonificar músculos o mejorar tu resistencia,
+            estamos aquí para ayudarte a alcanzar tus metas.
+            Únete a nosotros hoy mismo y comienza tu viaje hacia una vida más saludable y activa.
+        </p>
+
+        <button>¡Regístrate ahora!</button> 
+    </div>
+</section>
+
+
+<footer>
+    <div class="container">
+        <p>Gimnasio Atomico - Todos los derechos reservados</p>
+    </div>
+</footer>
+
+</body>
+</html> 
