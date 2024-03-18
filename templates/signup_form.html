@@ -2,7 +2,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,46 +29,3 @@
     </form>
   </body>
 </html>
-=======
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gimnasio Atomico</title>
-    <link rel="stylesheet" href="../static/css/login-signup.css">
-</head>
-<header>
-    <nav class="navbar">
-        <a href="{{ url_for('inicio') }}">Inicio</a>
-        <a href="#Registrar">Registro</a>
-        <a href="#Login">Inicio de Sesión</a>
-        <a href="#Logout">Cerrar Sesión</a>
-    </nav>
-</header>
-<body>
-<main class="main-content">
-    <div class="formulario">
-        <h1>Registro</h1>
-        <form method="POST">
-            {{ form.hidden_tag() }}
-            <div class="username">
-                <label for="username">Nombre de usuario:</label><br>
-                {{ form.username(size=20) }}<br>
-            </div>
-            <div class="email">
-                <label for="email">Correo electrónico:</label><br>
-                {{ form.email(size=20) }}<br>
-            </div>
-            <div class="password">
-                <label for="password">Contraseña:</label><br>
-                {{ form.password(size=20) }}<br>
-            </div>
-            <input type="submit" value="Registro">
-            <div class="login">
-                <a href="{{ url_for('show_login_form') }}">Iniciar sesión</a>
-            </div>
-        </form>
-    </div>
-</main>
-</body>
-   
->>>>>>> 4977cbb0fce5d661525a48250b45a326e59daacb
