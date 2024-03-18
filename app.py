@@ -42,7 +42,7 @@ def iniciar():
 @app.route("/registrar", methods=["POST"])
 def registrar():
     if request.method == "POST":
-        PASS
+        pass
     return render_template("signup_form.html")
 
 
