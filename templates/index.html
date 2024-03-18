@@ -3,8 +3,8 @@
 {% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> {% endblock %}
 
 {% block content %}
-    <section class="B">
-        <div class="container"> 
+    <section class="A">
+        <div class="contenedor1"> 
             <h1>Bienvenido al Gimnasio Atomico</h1>
             
                 <img src="{{ url_for('static', filename='img/atomic.PNG') }}" alt="Gimnasio Atomico">
@@ -18,8 +18,30 @@
                 Únete a nosotros hoy mismo y comienza tu viaje hacia una vida más saludable y activa.
             </p>
 
+        </div>
+    </section>
+    <section class="B">
+        <div class="contenedor2">
+        <h2>Acerca de nosotros</h2>
+
+            <img src="{{ url_for('static', filename='img/3.PNG') }}" alt="Gimnasio Atomico">
+
+        <p> 
+            Nuestro amplio y moderno gimnasio está equipado con una amplia gama de máquinas de última generación,
+            diseñadas para trabajar cada parte de tu cuerpo. Ya sea que estés buscando fortalecer tus músculos, mejorar tu resistencia o quemar calorías,
+            nuestras máquinas están aquí para desafiarte y ayudarte a alcanzar tus objetivos.
+            Pero en Gimnasio Atomico, no solo encontrarás equipos de primera calidad. También te ofrecemos un equipo de entrenadores expertos,
+            dedicados a tu éxito. Desde entrenamientos personalizados hasta consejos de nutrición,
+            nuestro personal está aquí para brindarte el apoyo y la orientación que necesitas para alcanzar tus metas de fitness de manera segura y efectiva.                
+            Y lo mejor de todo, en Gimnasio TotalFit, no solo te convertirás en un miembro de un gimnasio, sino en parte de una comunidad vibrante y motivadora.
+            Con eventos especiales, clases grupales emocionantes y un ambiente acogedor, te sentirás inspirado a cada paso del camino.
+            
+            <span>No esperes más para comenzar tu viaje hacia un cuerpo más fuerte y una mente más sana. 
+            ¡Regístrate hoy en Gimnasio TotalFit y descubre todo lo que podemos ofrecerte en tu viaje hacia una vida más activa y saludable!</span>
+        </p>
+
             <button>¡Regístrate ahora!</button> 
 
-        </div>
+        </div>    
     </section>
 {% endblock %}
