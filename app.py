@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from models import Usuario
 
+
 app = Flask(__name__)
 
 # Configuración de la base de datos
@@ -35,12 +36,12 @@ def inicio():
 
 @app.route("/iniciar")
 def iniciar():
-    return render_template("iniciar.html")
+    return render_template("login_form.html")
 
 
 @app.route("/registrar")
 def registrar():
-    return render_template("registrar.html")
+    return render_template("signup_form.html")
 
 
 @app.route("/cerrar")
