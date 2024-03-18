@@ -30,18 +30,19 @@ def load_user(user_id):
 
 
 @app.route("/")
-def index():
+def inicio():
     return render_template("index.html")
 
 
-<<<<<<< HEAD
 @app.route("/iniciar")
 def iniciar():
     return render_template("login_form.html")
 
 
-@app.route("/registrar")
+@app.route("/registrar", methods=["POST"])
 def registrar():
+    if request.method == "POST":
+        PASS
     return render_template("signup_form.html")
 
 
@@ -55,8 +56,6 @@ def perfil():
     return render_template("perfil.html")
 
 
-=======
->>>>>>> 570a08f29acd4fbf71fefb26bea3e1cae27d76a4
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
