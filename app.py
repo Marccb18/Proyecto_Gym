@@ -9,7 +9,11 @@ from models import Usuario
 
 app = Flask(__name__)
 
+<<<<<<< HEAD
 app.config["SECRET_KEY"] = "tu_clave_secreta_aqui"
+=======
+app.config['SECRET_KEY']='1234'
+>>>>>>> 4977cbb0fce5d661525a48250b45a326e59daacb
 
 # Configuración de la base de datos
 app.config["SQLALCHEMY_DATABASE_URI"] = (
@@ -40,15 +44,20 @@ def inicio():
     return render_template("index.html")
 
 
-@app.route("/iniciar")
+@app.route("/iniciar",methods=["POST","GET"])
 def iniciar():
     return render_template("login_form.html")
 
 
+<<<<<<< HEAD
 @app.route("/registrar", methods=["POST", "GET"])
+=======
+@app.route("/registrar", methods=["POST","GET"])
+>>>>>>> 4977cbb0fce5d661525a48250b45a326e59daacb
 def registrar():
     form = RegistroForm()  # Crear una instancia del formulario
     if request.method == "POST":
+<<<<<<< HEAD
         # Obtiene los datos del formulario
         usuario = request.form.get("usuario")
         password = request.form.get("password")
@@ -72,6 +81,10 @@ def registrar():
         return redirect(url_for(iniciar))
 
     return render_template("signup_form.html", form=form)
+=======
+        pass
+    return render_template("signup_form.html")
+>>>>>>> 4977cbb0fce5d661525a48250b45a326e59daacb
 
 
 @app.route("/cerrar")

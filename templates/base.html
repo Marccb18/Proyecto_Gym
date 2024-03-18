@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gimnasio Atomico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     {% block css %}{% endblock %}
 </head>
 <body>
@@ -11,14 +12,14 @@
         <nav class="navbar">
             <div class="Nav_derecha">
                 <div class="imagen">
-                    <img src="{{ url_for('static', filename='imagenes/Captura.PNG') }}"alt="Logo">
+                    <img src="{{ url_for('static', filename='img/Captura.PNG') }}"alt="Logo">
                 </div>
-                <a href="#">Inicio</a>
+                <a href="">Inicio</a>
             </div>
             <div class="Nav_izquierda">
-                <a href="#">Registro</a>
-                <a href="#">Inicio de Sesión</a>
-                <a href="#">Cerrar Sesión</a>
+                <a href="registrar">Registro</a>
+                <a href="iniciar">Inicio de Sesión</a>
+                <a href="cerrar">Cerrar Sesión</a>
             </div>
         </nav>
     </header>
@@ -31,20 +32,21 @@
 
             <div class="caja">
                 <h3>Referencia:</h3>
-                <a href="#">Inicio</a>
-                <a href="#">Registro</a>
-                <a href="#">Inicio Sesion</a>
-                <a href="#">Cerrar Sesion</a>
+                <a href="inicio">Inicio</a>
+                <a href="Registrar">Registro</a>
+                <a href="login">Inicio Sesion</a>
+                <a href="Logout">Cerrar Sesion</a>
             </div>
             
             <div class="caja">
                 <h3>Informacion de contacto:</h3>
-                <a href="#">Numero : +66 123 45 67 89</a>
-                <a href="#">Correo : AtomicGYM@gmail.com</a>
+                <a href="numero">Numero : +66 123 45 67 89</a>
+                <a href="correo">Correo : AtomicGYM@gmail.com</a>
             </div>
         </div>
-
+        
         <div class="creditos"> Gimnasio Atómico / Todos los derechos reservados</div>
+
     </footer>
 </body>
 </html> 

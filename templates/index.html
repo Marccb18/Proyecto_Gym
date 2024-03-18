@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 
+{% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> {% endblock %}
+
 {% block content %}
-    <section class="welcome">
-        <div class="container">
+    <section class="B">
+        <div class="container"> 
             <h1>Bienvenido al Gimnasio Atomico</h1>
             
-                <img src="{{ url_for('static', filename='imagenes/atomic.PNG') }}" alt="Gimnasio Atomico">
+                <img src="{{ url_for('static', filename='img/atomic.PNG') }}" alt="Gimnasio Atomico">
 
             <p>
                 ¡Bienvenido a Gimnasio Atómico, tu destino número uno para ponerte en forma
@@ -17,6 +19,7 @@
             </p>
 
             <button>¡Regístrate ahora!</button> 
+
         </div>
     </section>
 {% endblock %}
