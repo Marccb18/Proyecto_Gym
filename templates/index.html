@@ -1,1 +1,22 @@
 {% extends "base.html" %}
+
+{% block content %}
+    <section class="welcome">
+        <div class="container">
+            <h1>Bienvenido al Gimnasio Atomico</h1>
+            
+                <img src="{{ url_for('static', filename='imagenes/atomic.PNG') }}" alt="Gimnasio Atomico">
+
+            <p>
+                ¡Bienvenido a Gimnasio Atómico, tu destino número uno para ponerte en forma
+                y alcanzar tus objetivos de fitness! En nuestro gimnasio, te ofrecemos instalaciones de primera clase, 
+                entrenadores expertos y una variedad de clases emocionantes para satisfacer todas tus necesidades de entrenamiento.
+                Ya sea que estés buscando perder peso, tonificar músculos o mejorar tu resistencia,
+                estamos aquí para ayudarte a alcanzar tus metas.
+                Únete a nosotros hoy mismo y comienza tu viaje hacia una vida más saludable y activa.
+            </p>
+
+            <button>¡Regístrate ahora!</button> 
+        </div>
+    </section>
+{% endblock %}

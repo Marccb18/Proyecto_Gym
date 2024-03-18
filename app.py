@@ -29,28 +29,8 @@ def load_user(user_id):
 
 
 @app.route("/")
-def inicio():
+def index():
     return render_template("index.html")
-
-
-@app.route("/iniciar")
-def iniciar():
-    return render_template("iniciar.html")
-
-
-@app.route("/registrar")
-def registrar():
-    return render_template("registrar.html")
-
-
-@app.route("/cerrar")
-def cerrar():
-    return render_template("cerrar.html")
-
-
-@app.route("/perfil")
-def perfil():
-    return render_template("perfil.html")
 
 
 if __name__ == "__main__":
