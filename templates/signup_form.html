@@ -6,49 +6,48 @@
     <title>Gimnasio Atomico</title>
     <link rel="stylesheet" href="../static/css/login-signup.css">
 </head>
-<body>
-<!--Parte del header-->
-    <header>
-        <nav class="navbar">
-            <a href="{{ url_for('inicio') }}">Inicio</a>
-            <a href="#Registrarse">Registro</a>
-            <a href="#Login">Inicio de Sesión</a>
-            <a href="#Logout">Cerrar Sesión</a>
-        </nav>
-    </header>
-    <main class="main-content">
-        <div class="formulario">
-            <h1>Registro</h1>
-            <form action="" method="post" novalidate> <!-- Desactivamos la validación para trabajar con WTForms en el servidor -->
-                <!-- Añadimos este hidden_tag para trabajar con campos ocultos necesarios y así añadir una capa de seguridad, como puede ser los ataques CSRF-->
-                {{ form.hidden_tag() }}
-                <!-- Renderizamos los diferentes campos del formulario basado en WTForms -->
-                <div class="username">
-                    {{ form.username.label }}
-                    {{ form.username }}<br>
-                    {% for error in form.username.errors %}
-                    <span style="color: red;">{{ error }}</span>
-                    {% endfor %}
-                </div>
-                <div class="email">
-                    {{ form.email.label }}
-                    {{ form.email }}<br>
-                    {% for error in form.email.errors %}
-                    <span style="color: red;">{{ error }}</span>
-                    {% endfor %}
-                </div>
-                <div class="password">
-                    {{ form.password.label }}
-                    {{ form.password }}<br>
-                    {% for error in form.password.errors %}
-                    <span style="color: red;">{{ error }}</span>
-                    {% endfor %}
-                </div>
-                <input type="submit" value="Registro">
-                <div class="login">
-                    <a href="{{ url_for('show_login_form') }}">Iniciar sesión</a>
-                </div>
-            </form>
-        </div>
-    </main>
-</body>    
+<header>
+    <nav class="navbar">
+        <a href="{{ url_for('inicio') }}">Inicio</a>
+        <a href="#Registrarse">Registro</a>
+        <a href="#Login">Inicio de Sesión</a>
+        <a href="#Logout">Cerrar Sesión</a>
+    </nav>
+</header>
+<main class="main-content">
+    <div class="formulario">
+        <h1>Registro</h1>
+        <form action="" method="post" novalidate>
+            <!-- Añadimos el token CSRF -->
+            {{ form.hidden_tag() }}
+            <!-- Renderizamos los diferentes campos del formulario basado en WTForms -->
+            <div class="username">
+                {{ form.username.label }}
+                {{ form.username(size=20) }}<br>
+                {% for error in form.username.errors %}
+                <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="email">
+                {{ form.email.label }}
+                {{ form.email(size=20) }}<br>
+                {% for error in form.email.errors %}
+                <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="password">
+                {{ form.password.label }}
+                {{ form.password(size=20) }}<br>
+                {% for error in form.password.errors %}
+                <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <input type="submit" value="Registro">
+            <div class="login">
+                <a href="{{ url_for('show_login_form') }}">Iniciar sesión</a>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+   
