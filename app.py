@@ -1,7 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from models import Usuario
+
 
 app = Flask(__name__)
 
@@ -29,8 +30,30 @@ def load_user(user_id):
 
 
 @app.route("/")
-def index():
+def inicio():
     return render_template("index.html")
+
+
+@app.route("/iniciar")
+def iniciar():
+    return render_template("login_form.html")
+
+
+@app.route("/registrar", methods=["POST"])
+def registrar():
+    if request.method == "POST":
+        pass
+    return render_template("signup_form.html")
+
+
+@app.route("/cerrar")
+def cerrar():
+    return render_template("cerrar.html")
+
+
+@app.route("/perfil")
+def perfil():
+    return render_template("perfil.html")
 
 
 if __name__ == "__main__":
