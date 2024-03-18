@@ -36,12 +36,12 @@ def inicio():
     return render_template("index.html")
 
 
-@app.route("/iniciar")
+@app.route("/iniciar",methods=["POST","GET"])
 def iniciar():
     return render_template("login_form.html")
 
 
-@app.route("/registrar", methods=["POST"])
+@app.route("/registrar", methods=["POST","GET"])
 def registrar():
     if request.method == "POST":
         pass
