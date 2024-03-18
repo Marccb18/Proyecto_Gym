@@ -6,6 +6,8 @@ from models import Usuario
 
 app = Flask(__name__)
 
+app.config['SECRET_KEY']='1234'
+
 # Configuración de la base de datos
 app.config["SQLALCHEMY_DATABASE_URI"] = (
     "sqlite:///gym.db"  # Cambia esto según tu configuración
