@@ -9,13 +9,16 @@
   </head>
   <body>
     <h1>Registrarse</h1>
-    <form method="POST" action="{{ url_for('registrar') }}">
+    <form method="POST" action="{{ url_for('register') }}">
       {{ form.csrf_token }}
       <div>
         {{ form.usuario.label }} {{ form.usuario(size=32) }} {% for error in
         form.usuario.errors %}
         <span style="color: red">{{ error }}</span>
         {% endfor %}
+      </div>
+      <div>
+        {{ form.email.label }} {{ form.email(size=32) }}
       </div>
       <div>
         {{ form.password.label }} {{ form.password(size=32) }} {% for error in

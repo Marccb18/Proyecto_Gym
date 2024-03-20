@@ -1,90 +1,75 @@
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
-from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import DataRequired, Length, EqualTo
-from forms import RegistroForm
-from models import Usuario
-
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
+from forms import RegistroForm, LoginForm
 
 app = Flask(__name__)
-
-app.config["SECRET_KEY"] = "1234"
-
-# Configuración de la base de datos
-app.config["SQLALCHEMY_DATABASE_URI"] = (
-    "sqlite:///gym.db"  # Cambia esto según tu configuración
-)
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-
-# Inicializa la extensión SQLAlchemy
+app.secret_key = 'your_secret_key'  # Cambia esto por una clave secreta segura
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///gym.db'
 db = SQLAlchemy(app)
-
-login_manager = LoginManager(app)
-
-
-# Asigna la vista de login requerida
-login_manager.login_view = "iniciar"
-
-# Inicializa la extensión LoginManager
+login_manager = LoginManager()
 login_manager.init_app(app)
 
+class User(UserMixin, db.Model):
+    id = db.Column(db.Integer(), primary_key=True, autoincrement=True)
+    username = db.Column(db.String(100), unique=True, nullable=False)
+    email = db.Column(db.String(100), unique=True, nullable=False)
+    password = db.Column(db.String(100), nullable=False)
 
 @login_manager.user_loader
 def load_user(user_id):
-    return Usuario.query.get(int(user_id))
+    return User.query.get(int(user_id))
 
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-@app.route("/")
-def inicio():
-    return render_template("index.html")
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    signup_form = RegistroForm()
 
-
-@app.route("/iniciar", methods=["POST", "GET"])
-def iniciar():
-    return render_template("login_form.html")
-
-
-@app.route("/registrar", methods=["POST", "GET"])
-def registrar():
-    form = RegistroForm()  # Crear una instancia del formulario
-    if request.method == "POST":
-        # Obtiene los datos del formulario
-        usuario = request.form.get("usuario")
-        password = request.form.get("password")
-
-        # Corroborar si existe el usuario
-        existe_usuario = Usuario.query.filter_by(usuario=usuario).first()
-
-        if existe_usuario:
-            flash("El usuario ya existe.")
-            return redirect(url_for("registrar"))
-
-        # Crea un nuevo ususario
-        nuevo_usuario = Usuario(usuario=usuario)
-        nuevo_usuario.set_password(password)
-
-        # Guardar usuario en la base de datos
-        db.session.add(nuevo_usuario)
+    if signup_form.validate_on_submit():
+        username = signup_form.usuario.data
+        email = signup_form.email.data
+        password = signup_form.password.data
+        hashed_password = generate_password_hash(password)
+        new_user = User(username=username, email = email, password=hashed_password)
+        db.session.add(new_user)
         db.session.commit()
+        login_user(new_user, remember=False)
+        return redirect(url_for('index'))
 
-        flash("Se creó el nuevo usuario")
-        return redirect(url_for(iniciar))
+    return render_template('signup_form.html', form = signup_form)
 
-    return render_template("signup_form.html", form=form)
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    login_form = LoginForm()
+    if login_form.validate_on_submit():
+        email = login_form.email.data
+        password = login_form.password.data
 
+        user = User.query.filter_by(email=email).first()
 
-@app.route("/cerrar")
-def cerrar():
-    return render_template("cerrar.html")
+        if user and check_password_hash(user.password, password):
+            login_user(user)
+            return redirect(url_for('dashboard'))
 
+        return render_template('login_form.html', error='Invalid username or password')
 
-@app.route("/perfil")
-def perfil():
-    return render_template("perfil.html")
+    return render_template('login_form.html')
 
+@app.route('/dashboard')
+@login_required
+def dashboard():
+    return render_template('index.html', username=current_user.username)
 
-if __name__ == "__main__":
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
+if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     app.run(debug=True)

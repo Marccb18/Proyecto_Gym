@@ -6,6 +6,12 @@
     <section class="B">
         <div class="container"> 
             <h1>Bienvenido al Gimnasio Atomico</h1>
+
+            {% if current_user.is_authenticated %}
+                <header>
+                    <h1>{{ current_user.username }}</h1>
+                </header>
+            {% endif %}
             
                 <img src="{{ url_for('static', filename='img/atomic.PNG') }}" alt="Gimnasio Atomico">
 

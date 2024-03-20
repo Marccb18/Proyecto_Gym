@@ -17,9 +17,9 @@
                 <a href="">Inicio</a>
             </div>
             <div class="Nav_izquierda">
-                <a href="registrar">Registro</a>
+                <a href="{{ url_for('register') }}">Registro</a>
                 <a href="iniciar">Inicio de Sesión</a>
-                <a href="cerrar">Cerrar Sesión</a>
+                <a href="{{ url_for('logout') }}">Cerrar Sesión</a>
             </div>
         </nav>
     </header>
@@ -33,9 +33,9 @@
             <div class="caja">
                 <h3>Referencia:</h3>
                 <a href="inicio">Inicio</a>
-                <a href="Registrar">Registro</a>
+                <a href="{{ url_for('register') }}">Registro</a>
                 <a href="login">Inicio Sesion</a>
-                <a href="Logout">Cerrar Sesion</a>
+                <a href="{{ url_for('logout') }}">Cerrar Sesion</a>
             </div>
             
             <div class="caja">
