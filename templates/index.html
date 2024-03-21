@@ -1,31 +1,53 @@
 {% extends "base.html" %}
-
+{% block title %}Gimnasio Atómico{% endblock %}
 {% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> {% endblock %}
 
 {% block content %}
-    <section class="B">
-        <div class="container"> 
-            <h1>Bienvenido al Gimnasio Atomico</h1>
-
-            {% if current_user.is_authenticated %}
-                <header>
-                    <h1>{{ current_user.username }}</h1>
-                </header>
-            {% endif %}
-            
-                <img src="{{ url_for('static', filename='img/atomic.PNG') }}" alt="Gimnasio Atomico">
-
+    {% if not current_user.is_authenticated %}
+        <section class="B">
+            <div class="container"> 
+                <h1>Bienvenido al Gimnasio Atomico</h1>
+                
+                    <img src="{{ url_for('static', filename='img/atomic.PNG') }}" alt="Gimnasio Atomico">
+                <p>
+                    ¡Bienvenido a Gimnasio Atómico, tu destino número uno para ponerte en forma
+                    y alcanzar tus objetivos de fitness! En nuestro gimnasio, te ofrecemos instalaciones de primera clase, 
+                    entrenadores expertos y una variedad de clases emocionantes para satisfacer todas tus necesidades de entrenamiento.
+                    Ya sea que estés buscando perder peso, tonificar músculos o mejorar tu resistencia,
+                    estamos aquí para ayudarte a alcanzar tus metas.
+                    Únete a nosotros hoy mismo y comienza tu viaje hacia una vida más saludable y activa.
+                </p>
+                <a href="{{ url_for('register') }}">¡Regístrate ahora!</a>
+            </div>
             <p>
-                ¡Bienvenido a Gimnasio Atómico, tu destino número uno para ponerte en forma
-                y alcanzar tus objetivos de fitness! En nuestro gimnasio, te ofrecemos instalaciones de primera clase, 
-                entrenadores expertos y una variedad de clases emocionantes para satisfacer todas tus necesidades de entrenamiento.
-                Ya sea que estés buscando perder peso, tonificar músculos o mejorar tu resistencia,
-                estamos aquí para ayudarte a alcanzar tus metas.
-                Únete a nosotros hoy mismo y comienza tu viaje hacia una vida más saludable y activa.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad iusto velit perspiciatis, nobis expedita quae! Praesentium sed ex, a qui voluptate deserunt quidem magni corporis voluptates autem vitae blanditiis voluptatibus.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nostrum voluptate consequatur quisquam, ad, consectetur sapiente facere quaerat eaque consequuntur fugit libero amet? Molestias neque illo repellat culpa, voluptatibus vitae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, cupiditate illum? In sint deleniti quibusdam, debitis consectetur provident corporis officiis corrupti eveniet hic veniam quisquam cumque eaque reiciendis soluta similique.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat tempora nam ullam amet quisquam voluptate reprehenderit beatae quibusdam? Nobis necessitatibus ipsa autem explicabo veniam aperiam vitae odit in quasi iure.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti aspernatur sint perspiciatis nihil adipisci consequuntur quam dolorem atque aliquam aperiam rerum dolores, laborum similique mollitia beatae quas optio obcaecati totam!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, accusantium, magnam similique rerum modi fugit ducimus ex eum eius perspiciatis sit dolores unde explicabo quo dignissimos soluta ipsam tempora architecto.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus laudantium voluptatum tempore, quam officia nostrum suscipit debitis labore, repudiandae, recusandae ullam beatae animi similique dolorum quae quod libero laborum non?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi hic, blanditiis doloribus unde repudiandae aut temporibus molestias officiis harum laborum quidem, suscipit labore reiciendis voluptatibus iste facere, et quod deleniti.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora maxime vitae nemo eligendi corporis amet aperiam itaque. Quos accusamus soluta itaque necessitatibus voluptate iure, maiores quam a, omnis, ad nobis.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, corrupti. Atque saepe perspiciatis quos sed velit blanditiis quis eum, placeat, modi vel excepturi dolor vitae! Illo iste voluptas est repellendus!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, obcaecati quam inventore fuga harum a dolores accusantium non nemo molestiae ab repellendus tempore esse aspernatur enim adipisci illo cupiditate eius!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam nostrum ea harum, tempora quia illum fugit nihil, sed iure optio commodi. Neque, quod repudiandae in suscipit quia ipsa sed eius.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur ab, temporibus quidem neque quisquam pariatur veritatis optio alias iste nemo culpa. Eaque dolorum quas magni facere iusto optio, voluptatum explicabo!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos tenetur, possimus minima quis cum exercitationem delectus suscipit dolorem quam dolor? Consequuntur porro nisi corrupti mollitia iure blanditiis sequi? Minus, corrupti.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi quia aspernatur numquam! Perspiciatis voluptatibus recusandae dolorum magnam corrupti molestias, necessitatibus iure itaque autem unde quidem saepe cumque, est optio odio!
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, id molestias? Quo modi, eius cumque tempora enim necessitatibus pariatur molestias a provident, debitis, itaque dolores dolore earum magni culpa aperiam!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora beatae voluptatum quibusdam sed porro officiis! Sit, quia ipsum magni dolorem unde nulla omnis maxime! Pariatur quisquam dicta deserunt voluptates asperiores!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ipsa aspernatur sapiente minus, odit ratione. Veritatis, doloribus. Explicabo aspernatur error qui dolorem praesentium inventore esse ipsa sit ex, blanditiis veritatis!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam id mollitia possimus quas pariatur itaque temporibus atque maiores dolores, animi aliquam magnam rerum eaque ad odit, placeat in vero quidem?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam omnis voluptates assumenda quod autem eveniet est. Natus ipsa rerum quod. Dolores nihil modi aliquid veritatis deleniti sit, maiores harum distinctio?
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus quibusdam tempora veniam obcaecati nisi atque harum aut a aliquid cum assumenda alias ipsam, hic perferendis repudiandae dolore, qui sapiente architecto.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iure pariatur voluptas earum consequuntur. Et magni sunt dolore mollitia rerum esse saepe. Dicta quia, facilis quaerat nulla corporis ipsa unde?
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta adipisci, eaque tenetur distinctio ab hic unde blanditiis minima impedit perferendis ad sapiente aut neque odit, ex enim mollitia, ipsa magni?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi fugiat maxime excepturi laborum rerum minima magni tempora dicta illum repellat, molestiae, fuga delectus, veritatis iste eum dolores? Sint, corporis consequatur?
             </p>
-
-            <button>¡Regístrate ahora!</button> 
-
-        </div>
-    </section>
+        </section>
+    {% endif %}
+    {% if current_user.is_authenticated %}
+        <h1>Hola {{ current_user.username }}</h1>
+    {% endif %}
 {% endblock %}

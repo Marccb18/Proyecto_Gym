@@ -5,7 +5,7 @@ from flask_login import LoginManager, UserMixin, login_user, logout_user, login_
 from forms import RegistroForm, LoginForm
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Cambia esto por una clave secreta segura
+app.secret_key = '1234'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///gym.db'
 db = SQLAlchemy(app)
 login_manager = LoginManager()
@@ -52,17 +52,12 @@ def login():
         user = User.query.filter_by(email=email).first()
 
         if user and check_password_hash(user.password, password):
-            login_user(user)
-            return redirect(url_for('dashboard'))
+            login_user(user, remember=False)
+            return redirect(url_for('index'))
+        else:
+            return render_template('login_form.html', form=login_form, error=True)
 
-        return render_template('login_form.html', error='Invalid username or password')
-
-    return render_template('login_form.html')
-
-@app.route('/dashboard')
-@login_required
-def dashboard():
-    return render_template('index.html', username=current_user.username)
+    return render_template('login_form.html', form = login_form, error=False)
 
 @app.route('/logout')
 def logout():

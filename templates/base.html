@@ -3,27 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gimnasio Atomico</title>
+    <title> {% block title %}{% endblock %} </title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     {% block css %}{% endblock %}
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="Nav_derecha">
-                <div class="imagen">
-                    <img src="{{ url_for('static', filename='img/Captura.PNG') }}"alt="Logo">
-                </div>
-                <a href="">Inicio</a>
-            </div>
-            <div class="Nav_izquierda">
-                <a href="{{ url_for('register') }}">Registro</a>
-                <a href="iniciar">Inicio de Sesión</a>
-                <a href="{{ url_for('logout') }}">Cerrar Sesión</a>
-            </div>
-        </nav>
+    <header id="header">
+        <div class="navbar">
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='img/Captura.PNG') }}" alt="Logo" id="logo">
+            </a>
+            <ul>
+                <li><a href="{{ url_for('login') }}">Iniciar Sesión</a></li>
+                <li><a href="{{ url_for('register') }}">Registrarse</a></li>
+                {% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('logout') }}">Cerrar Sesión</a></li>
+                {% endif %}
+            </ul>
+        </div>
     </header>
-    <main>
+    <main id="content">
     {% block content %}
     {% endblock %}
     </main>
@@ -44,9 +43,8 @@
                 <a href="correo">Correo : AtomicGYM@gmail.com</a>
             </div>
         </div>
-        
         <div class="creditos"> Gimnasio Atómico / Todos los derechos reservados</div>
-
     </footer>
+    <script src="{{ url_for('static', filename='js/nav.js') }}"></script>
 </body>
 </html> 
