@@ -1,11 +1,15 @@
+body {
+    overflow: hidden;
+}
+
 #content {
     background-image: url(../img/background-forms.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    height: 80vh;
-    margin-top: -30px;
+    height: 110vh;
+    margin-top: -50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +18,8 @@
 
 form {
     background-color: rgba(0, 0, 0, 0.547);
-    padding: 30px 20px;
+    color: white;
+    padding: 50px 20px;
     border-radius: 10px;
     width: fit-content;
     height: fit-content;
@@ -22,5 +27,17 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between
+    justify-content: space-between;
+}
+
+.error {
+    text-wrap: pretty;
+    text-align: center;
+    font-weight: bold;
+    width: 300px;
+}
+
+
+.login a {
+    color: white;
 }
