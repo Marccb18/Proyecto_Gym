@@ -1,0 +1,26 @@
+#content {
+    background-image: url(../img/background-forms.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 80vh;
+    margin-top: -30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+form {
+    background-color: rgba(0, 0, 0, 0.547);
+    padding: 30px 20px;
+    border-radius: 10px;
+    width: fit-content;
+    height: fit-content;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between
+}

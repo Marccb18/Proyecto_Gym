@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
+from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required
 from forms import RegistroForm, LoginForm
 
 app = Flask(__name__)
@@ -30,17 +30,20 @@ def register():
     signup_form = RegistroForm()
 
     if signup_form.validate_on_submit():
-        username = signup_form.usuario.data
-        email = signup_form.email.data
-        password = signup_form.password.data
-        hashed_password = generate_password_hash(password)
-        new_user = User(username=username, email = email, password=hashed_password)
-        db.session.add(new_user)
-        db.session.commit()
-        login_user(new_user, remember=False)
-        return redirect(url_for('index'))
+        try:
+            username = signup_form.usuario.data
+            email = signup_form.email.data
+            password = signup_form.password.data
+            hashed_password = generate_password_hash(password)
+            new_user = User(username=username, email = email, password=hashed_password)
+            db.session.add(new_user)
+            db.session.commit()
+            login_user(new_user, remember=False)
+            return redirect(url_for('index'))
+        except:
+            return render_template('signup_form.html', form = signup_form, error=True)
 
-    return render_template('signup_form.html', form = signup_form)
+    return render_template('signup_form.html', form = signup_form, error=False)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -60,6 +63,7 @@ def login():
     return render_template('login_form.html', form = login_form, error=False)
 
 @app.route('/logout')
+@login_required
 def logout():
     logout_user()
     return redirect(url_for('index'))
