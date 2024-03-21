@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Registro{% endblock %}
+{% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}"> {% endblock %}
+{% block content %}
+<form method="POST" action="{{ url_for('register') }}">
+    <p>Registrarse</p>
+    {{ form.csrf_token }}
+    {{ form.usuario(placeholder='Nombre') }}
+    {{ form.email(placeholder='Email') }}
+    {{ form.password(placeholder='Contraseña') }}
+    {% if error %}
+      <p class="error">Error: El correo o el nombre de usuario ya están en uso</p>
+    {% endif %}
+    {{ form.submit(placeholder='Registrarse') }}
+    <p class="login">
+      Ya tienes una cuenta? 
+      <a href="{{ url_for('login') }}">Inicia Sesión</a>
+    </p>
+  </form>
+{% endblock %}
