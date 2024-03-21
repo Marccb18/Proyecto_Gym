@@ -6,32 +6,36 @@
     color: rgb(0, 0, 0);
     text-align: center;
     padding: 100px 20px;
-  }
-  
-  .banner-content {
-    max-width: 800px;
-    margin: 0 auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    padding: 50px;
-  }
-  
-  .banner-content h1 {
-    font-size: 3em;
-  }
-  
-  .banner-content p {
-    font-size: 1.2em;
-  }
-  
-  .banner-content .btn {
-    display: inline-block;
-    background-color: #FF5733;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-  }
+}
+
+.banner-content {
+max-width: 800px;
+margin: 0 auto;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+padding: 50px;
+}
+
+.banner-content h1 {
+font-size: 3em;
+}
+
+.banner-content p {
+font-size: 1.2em;
+}
+
+.banner-content .btn {
+display: inline-block;
+background-color: #FF5733;
+color: white;
+padding: 10px 20px;
+text-decoration: none;
+border-radius: 5px;
+margin-top: 20px;
+}
+
+.banner-content .btn:hover {
+    cursor: pointer;
+}
     
 
 /* Estilo para los servicios */
@@ -56,7 +60,7 @@
 
 .service img {
     width: 100%;
-    height: 50%; /* Altura del 50% del contenedor */
+    height: 50%;
     object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -64,7 +68,7 @@
 
 .service-content {
     padding: 20px;
-    height: 50%; /* Altura del 50% del contenedor */
+    height: 50%;
 }
 
 .service h3 {
@@ -78,11 +82,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Número de líneas que se mostrarán */
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
 
-/* Estilo para los testimonios */
+
 #testimonials {
     padding: 50px 0;
     background-color: #333;

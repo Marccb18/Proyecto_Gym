@@ -1,161 +1,167 @@
-{% extends "base.html" %} {% block title %}Inicio - Gimnasio Atómico{%
-endblock%} {% block css %}
-<link
-  rel="stylesheet"
-  href="{{ url_for('static', filename='css/index.css') }}"
-/>
-{% endblock %}{% block content %} {% if not current_user.is_authenticated %}
-<section id="banner">
-  <div class="container">
-    <div class="banner-content">
-      <h1>Bienvenido a Gimnasio Atómico</h1>
-      <p>Transforma tu cuerpo, transforma tu vida.</p>
-      <p>
-        En Gimnasio Atómico, no solo te ayudamos a alcanzar tus metas de
-        fitness, sino que también te brindamos el apoyo y la motivación
-        necesarios para convertirte en la mejor versión de ti mismo. Nuestros
-        entrenadores expertos y nuestra amplia gama de equipos de alta calidad
-        están aquí para ayudarte en cada paso del camino.
-      </p>
-      <a class="btn">¡Comienza tu viaje ahora!</a>
-    </div>
-  </div>
-</section>
+{% extends "base.html" %}
+{% block title %}Inicio - Gimnasio Atómico{%endblock%} 
+{% block css %}
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/index.css') }}"
+  />
+{% endblock %}
 
-<section id="services">
-  <div class="container">
-    <h2>Nuestros Servicios</h2>
-    <div class="service">
-      <img
-        src="{{ url_for('static', filename='img/servicio1.jpg') }}"
-        alt="Entrenamiento Personalizado"
-      />
-      <div class="service-content">
-        <h3>Entrenamiento Personalizado</h3>
-        <p>
-          Nuestros entrenadores expertos te ayudarán a alcanzar tus objetivos de
-          fitness de manera efectiva. Ofrecemos un enfoque personalizado para
-          cada cliente, adaptado a tus necesidades y capacidades individuales.
-          Ya sea que estés buscando perder peso, ganar músculo o mejorar tu
-          resistencia, nuestro equipo estará contigo en cada paso del camino.
-        </p>
+{% block content %} 
+  {% if not current_user.is_authenticated %}
+    <section id="banner">
+      <div class="container">
+        <div class="banner-content">
+          <h1>Bienvenido a Gimnasio Atómico</h1>
+          <p>Transforma tu cuerpo, transforma tu vida.</p>
+          <p>
+            En Gimnasio Atómico, no solo te ayudamos a alcanzar tus metas de
+            fitness, sino que también te brindamos el apoyo y la motivación
+            necesarios para convertirte en la mejor versión de ti mismo. Nuestros
+            entrenadores expertos y nuestra amplia gama de equipos de alta calidad
+            están aquí para ayudarte en cada paso del camino.
+          </p>
+          <a class="btn">¡Comienza tu viaje ahora!</a>
+        </div>
       </div>
-    </div>
-    <div class="service">
-      <img
-        src="{{ url_for('static', filename='img/servicio2.jpg') }}"
-        alt="Clases Variadas"
-      />
-      <div class="service-content">
-        <h3>Clases Variadas</h3>
-        <p>
-          Ofrecemos una amplia variedad de clases, desde yoga hasta
-          entrenamiento de fuerza. Nuestras clases están diseñadas para
-          adaptarse a todos los niveles de condición física, desde principiantes
-          hasta avanzados. Con instructores altamente calificados y una
-          atmósfera motivadora, te garantizamos que encontrarás una clase que se
-          ajuste a tus necesidades y te ayude a alcanzar tus objetivos de
-          fitness.
-        </p>
+    </section>
+    
+    <section id="services">
+      <div class="container">
+        <h2>Nuestros Servicios</h2>
+        <div class="service">
+          <img
+            src="{{ url_for('static', filename='img/servicio1.jpg') }}"
+            alt="Entrenamiento Personalizado"
+          />
+          <div class="service-content">
+            <h3>Entrenamiento Personalizado</h3>
+            <p>
+              Nuestros entrenadores expertos te ayudarán a alcanzar tus objetivos de
+              fitness de manera efectiva. Ofrecemos un enfoque personalizado para
+              cada cliente, adaptado a tus necesidades y capacidades individuales.
+              Ya sea que estés buscando perder peso, ganar músculo o mejorar tu
+              resistencia, nuestro equipo estará contigo en cada paso del camino.
+            </p>
+          </div>
+        </div>
+        <div class="service">
+          <img
+            src="{{ url_for('static', filename='img/servicio2.jpg') }}"
+            alt="Clases Variadas"
+          />
+          <div class="service-content">
+            <h3>Clases Variadas</h3>
+            <p>
+              Ofrecemos una amplia variedad de clases, desde yoga hasta
+              entrenamiento de fuerza. Nuestras clases están diseñadas para
+              adaptarse a todos los niveles de condición física, desde principiantes
+              hasta avanzados. Con instructores altamente calificados y una
+              atmósfera motivadora, te garantizamos que encontrarás una clase que se
+              ajuste a tus necesidades y te ayude a alcanzar tus objetivos de
+              fitness.
+            </p>
+          </div>
+        </div>
+        <div class="service">
+          <img
+            src="{{ url_for('static', filename='img/servicio3.jpg') }}"
+            alt="Equipamiento de Calidad"
+          />
+          <div class="service-content">
+            <h3>Equipamiento de Calidad</h3>
+            <p>
+              Nuestro gimnasio está equipado con la última tecnología en maquinaria
+              de fitness. Desde equipos de cardio de vanguardia hasta pesas libres y
+              máquinas de fuerza, tenemos todo lo que necesitas para tu rutina de
+              entrenamiento. Nuestro equipo es regularmente mantenido y actualizado
+              para garantizar su funcionalidad y seguridad, brindándote la mejor
+              experiencia de entrenamiento posible.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="service">
-      <img
-        src="{{ url_for('static', filename='img/servicio3.jpg') }}"
-        alt="Equipamiento de Calidad"
-      />
-      <div class="service-content">
-        <h3>Equipamiento de Calidad</h3>
-        <p>
-          Nuestro gimnasio está equipado con la última tecnología en maquinaria
-          de fitness. Desde equipos de cardio de vanguardia hasta pesas libres y
-          máquinas de fuerza, tenemos todo lo que necesitas para tu rutina de
-          entrenamiento. Nuestro equipo es regularmente mantenido y actualizado
-          para garantizar su funcionalidad y seguridad, brindándote la mejor
-          experiencia de entrenamiento posible.
-        </p>
+    </section>
+    
+    <section id="testimonials">
+      <div class="container">
+        <h2>Testimonios</h2>
+        <div class="testimonial">
+          <img
+            src="{{ url_for('static', filename='img/avatar1.jpg') }}"
+            alt="Avatar"
+          />
+          <blockquote>
+            "¡He logrado resultados increíbles en Gimnasio Atómico! ¡Altamente
+            recomendado!"
+          </blockquote>
+          <cite>- María G.</cite>
+        </div>
+        <div class="testimonial">
+          <img
+            src="{{ url_for('static', filename='img/avatar2.jpg') }}"
+            alt="Avatar"
+          />
+          <blockquote>
+            "Una experiencia fantástica. Los entrenadores son muy amables y
+            motivadores."
+          </blockquote>
+          <cite>- Juan C.</cite>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="testimonials">
-  <div class="container">
-    <h2>Testimonios</h2>
-    <div class="testimonial">
-      <img
-        src="{{ url_for('static', filename='img/avatar1.jpg') }}"
-        alt="Avatar"
-      />
-      <blockquote>
-        "¡He logrado resultados increíbles en Gimnasio Atómico! ¡Altamente
-        recomendado!"
-      </blockquote>
-      <cite>- María G.</cite>
-    </div>
-    <div class="testimonial">
-      <img
-        src="{{ url_for('static', filename='img/avatar2.jpg') }}"
-        alt="Avatar"
-      />
-      <blockquote>
-        "Una experiencia fantástica. Los entrenadores son muy amables y
-        motivadores."
-      </blockquote>
-      <cite>- Juan C.</cite>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <h2>Contacto</h2>
-    <p>¿Tienes alguna pregunta o quieres programar una visita? ¡Contáctanos!</p>
-    <form action="#" method="post">
-      <input type="text" name="name" placeholder="Nombre" required />
-      <input
-        type="email"
-        name="email"
-        placeholder="Correo Electrónico"
-        required
-      />
-      <textarea name="message" placeholder="Mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
-</section>
-
-{% else %}
-<section id="banner">
-  <div class="container">
-    <div class="banner-content">
-      <h1>Bienvenido {{ current_user.username|upper }} a Gimnasio Atómico</h1>
-      <p>¡Gracias por ser parte de Gimnasio Atómico!</p>
-      <p>
-        Te damos la bienvenida a nuestra comunidad. Aquí encontrarás todo lo que
-        necesitas para alcanzar tus metas de fitness y transformar tu vida.
-      </p>
-      <p>
-        Como miembro registrado, tendrás acceso a una amplia gama de servicios y
-        beneficios exclusivos:
-      </p>
-      <ul style="text-align: left">
-        <li>Entrenamiento personalizado con nuestros expertos entrenadores.</li>
-        <li>
-          Clases variadas que se adaptan a todos los niveles de condición
-          física.
-        </li>
-        <li>Equipamiento de calidad para tu rutina de entrenamiento.</li>
-        <li>
-          Testimonios de otros usuarios que han logrado resultados increíbles.
-        </li>
-        <li>Y mucho más...</li>
-      </ul>
-      <p>
-        ¡Estamos emocionados de acompañarte en tu viaje hacia una vida más
-        saludable y en forma!
-      </p>
-    </div>
-  </div>
-</section>
-{% endif %} {% endblock %}
+    </section>
+    
+    <section id="contact">
+      <div class="container">
+        <h2>Contacto</h2>
+        <p>¿Tienes alguna pregunta o quieres programar una visita? ¡Contáctanos!</p>
+        <form action="#" method="post">
+          <input type="text" name="name" placeholder="Nombre" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Correo Electrónico"
+            required
+          />
+          <textarea name="message" placeholder="Mensaje" required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+    
+  {% else %}
+    <section id="banner">
+      <div class="container">
+        <div class="banner-content">
+          <h1>Bienvenido {{ current_user.username|upper }} a Gimnasio Atómico</h1>
+          <p>¡Gracias por ser parte de Gimnasio Atómico!</p>
+          <p>
+            Te damos la bienvenida a nuestra comunidad. Aquí encontrarás todo lo que
+            necesitas para alcanzar tus metas de fitness y transformar tu vida.
+          </p>
+          <p>
+            Como miembro registrado, tendrás acceso a una amplia gama de servicios y
+            beneficios exclusivos:
+          </p>
+          <ul style="text-align: left">
+            <li>Entrenamiento personalizado con nuestros expertos entrenadores.</li>
+            <li>
+              Clases variadas que se adaptan a todos los niveles de condición
+              física.
+            </li>
+            <li>Equipamiento de calidad para tu rutina de entrenamiento.</li>
+            <li>
+              Testimonios de otros usuarios que han logrado resultados increíbles.
+            </li>
+            <li>Y mucho más...</li>
+          </ul>
+          <p>
+            ¡Estamos emocionados de acompañarte en tu viaje hacia una vida más
+            saludable y en forma!
+          </p>
+        </div>
+      </div>
+    </section>
+  {% endif %} 
+{% endblock %}
+  

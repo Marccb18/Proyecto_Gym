@@ -10,7 +10,7 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 1000;    
 }
 
 #header.shrink {
@@ -19,11 +19,14 @@ body {
 }
 
 #logo {
-    height: 40px;
+    height: 50px;
     width: auto;
-    border-radius: 50%;
     margin-left: 20px;
+    background-color: white;
+    border: 0.5px solid white;
+    border-radius: 20%;
 }
+
 
 .navbar {
     display: flex;
@@ -58,12 +61,28 @@ body {
 }
 
 footer {
-    background-color: black;
+    background-color: #333;
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 footer p {
     margin: 0;
+}
+
+.caja {
+    display: flex;
+    flex-direction: column;
+}
+
+.caja h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: white;
+}
+
+.caja a {
+    color: white;
+    font-size: 0.9rem;
 }
