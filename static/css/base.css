@@ -1,6 +1,10 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-image: url('../img/mrcptcrto.jpg');
+    background-size: 70%;
+    background-position: center;
+
 }
 
 #header {

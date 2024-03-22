@@ -1,7 +1,7 @@
 /* Estilo para el banner */
 #banner {
     background-image: url('img/banner.jpg');
-    background-size: cover;
+    background-size: auto;
     background-position: center;
     color: rgb(0, 0, 0);
     text-align: center;
@@ -12,6 +12,7 @@
 max-width: 800px;
 margin: 0 auto;
 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+background-color: #f8f9fa;
 padding: 50px;
 }
 
