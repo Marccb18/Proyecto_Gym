@@ -143,7 +143,13 @@ margin-top: 20px;
     border-radius: 5px;
     cursor: pointer;
 }
-
+#contact h2,#contact p{
+    font-weight: bold; 
+    color: #000000;
+    margin-bottom: 20px;
+    text-shadow: 2px 0px #ffffff;
+    
+}
 /* Estilos adicionales */
 body {
     font-family: Arial, sans-serif; /* Cambiar la fuente de todo el documento */
